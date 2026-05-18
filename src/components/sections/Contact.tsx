@@ -5,8 +5,10 @@ import MagneticButton from "@/components/ui/MagneticButton";
 import Reveal from "@/components/ui/Reveal";
 import { SITE } from "@/data/site";
 
+const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(SITE.email)}&su=${encodeURIComponent("Hello Ashik — let's connect")}`;
+
 const channels = [
-  { href: `mailto:${SITE.email}`, label: SITE.email, icon: <FiMail /> },
+  { href: gmailCompose, label: SITE.email, icon: <FiMail />, ext: true },
   { href: `tel:${SITE.phone}`, label: "+91 63046 46550", icon: <FiPhone /> },
   { href: SITE.github, label: "github.com/shaik-mohammad-ashik", icon: <FaGithub />, ext: true },
   { href: SITE.linkedin, label: "linkedin.com/in/shaik-mohammad-ashik", icon: <FaLinkedin />, ext: true },
@@ -35,42 +37,44 @@ export default function Contact() {
               maskComposite: "exclude",
             }}
           />
-          <span className="eyebrow mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" /> Contact
-          </span>
-          <h2 className="text-3xl md:text-[40px] font-bold mt-3 mb-3">
-            Let's <span className="grad-text">build something</span> intelligent.
-          </h2>
-          <p className="text-[var(--text-2)] max-w-[520px] mx-auto text-[15px] mb-7">
-            Open to AI infrastructure roles, autonomous systems projects, robotics &amp; embedded AI, and collaboration on
-            orchestration architecture.
-          </p>
+          <div className="relative z-10">
+            <span className="eyebrow mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" /> Contact
+            </span>
+            <h2 className="text-3xl md:text-[40px] font-bold mt-3 mb-3">
+              Let&apos;s <span className="grad-text">build something</span> intelligent.
+            </h2>
+            <p className="text-[var(--text-2)] max-w-[520px] mx-auto text-[15px] mb-7">
+              Open to AI infrastructure roles, autonomous systems projects, robotics &amp; embedded AI, and collaboration on
+              orchestration architecture.
+            </p>
 
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            <MagneticButton href={`mailto:${SITE.email}`} variant="primary">
-              <FiSend /> Get in Touch
-            </MagneticButton>
-            <MagneticButton href={SITE.resume} target="_blank" variant="gold">
-              <FiArrowDown /> Download Résumé
-            </MagneticButton>
-          </div>
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              <MagneticButton href={gmailCompose} target="_blank" rel="noopener noreferrer" variant="primary">
+                <FiSend /> Get in Touch
+              </MagneticButton>
+              <MagneticButton href={SITE.resume} target="_blank" rel="noopener noreferrer" variant="gold">
+                <FiArrowDown /> Download Résumé
+              </MagneticButton>
+            </div>
 
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {channels.map((c) => (
-              <a
-                key={c.label}
-                href={c.href}
-                {...(c.ext ? { target: "_blank", rel: "noopener" } : {})}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] text-[var(--text-2)] transition-all hover:text-green hover:-translate-y-0.5 hover:border-green/40 hover:shadow-[0_0_18px_rgba(45,232,138,.18)]"
-                style={{
-                  background: "rgba(255,255,255,.03)",
-                  border: "1px solid rgba(255,255,255,.06)",
-                }}
-              >
-                <span className="text-[14px]">{c.icon}</span>
-                {c.label}
-              </a>
-            ))}
+            <div className="flex flex-wrap justify-center gap-2.5">
+              {channels.map((c) => (
+                <a
+                  key={c.label}
+                  href={c.href}
+                  {...(c.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] text-[var(--text-2)] transition-all hover:text-green hover:-translate-y-0.5 hover:border-green/40 hover:shadow-[0_0_18px_rgba(45,232,138,.18)]"
+                  style={{
+                    background: "rgba(255,255,255,.03)",
+                    border: "1px solid rgba(255,255,255,.06)",
+                  }}
+                >
+                  <span className="text-[14px]">{c.icon}</span>
+                  {c.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </Reveal>
