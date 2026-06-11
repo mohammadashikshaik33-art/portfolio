@@ -1,14 +1,19 @@
-// ─────────────────────────────────────────────
-//  src/data/site.ts  ·  Single source of truth
-// ─────────────────────────────────────────────
-
 export const site = {
   // ── Identity ──────────────────────────────
   name:      "Shaik Mohammad Ashik",
   shortName: "ashik.dev",
 
+  // ── Navigation (REQUIRED BY Navbar.tsx) ──
+  nav: [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "projects", label: "Projects" },
+    { id: "skills", label: "Skills" },
+    { id: "timeline", label: "Timeline" },
+    { id: "contact", label: "Contact" },
+  ],
+
   // ── Hero headline & subline ───────────────
-  // Shown right beneath the animated typewriter in the hero
   role: "Python Developer · AI Automation · EEE @ VVIT",
 
   // Main H1
@@ -28,7 +33,7 @@ export const site = {
   // ── Social links ──────────────────────────
   github:   "https://github.com/mohammadashikshaik33-art",
   linkedin: "https://linkedin.com/in/shaik-mohammad-ashik",
-  twitter:  "",   // leave empty — remove from nav
+  twitter:  "",
   portfolio: "https://portfolio-psi-flame-90.vercel.app",
   resume:   "/resume.pdf",
 
@@ -36,10 +41,10 @@ export const site = {
   stats: [
     { value: "2",  label: "Systems shipped" },
     { value: "4",  label: "AI certifications" },
-    { value: "3+", label: "Years building"   },
+    { value: "3+", label: "Years building" },
   ],
 
-  // ── Status badge ─────────────────────────
+  // ── Status badge ──────────────────────────
   availability: "Available for work",
 
   // ── SEO / meta ────────────────────────────
@@ -48,45 +53,3 @@ export const site = {
   ogTitle:         "Shaik Mohammad Ashik — Python AI & Automation Developer",
   ogDescription:   "Building Intelligent Automation Systems.",
 };
-
-// ── About section ─────────────────────────────
-export const about = {
-  headline: "Systems architecture\n meets applied AI.",
-
-  paragraphs: [
-    "I'm a final-year Electrical & Electronics Engineering student at VVIT with a practical " +
-    "foundation in Python-based AI system design, voice automation architecture, and " +
-    "sensor-driven electrical fault detection.",
-
-    "My work centres on building real-world, modular systems — integrating speech recognition " +
-    "pipelines, rule-based data processing engines, and Generative AI toolchains. I think in " +
-    "layers: every system I build decouples voice input parsing from execution logic, and " +
-    "CSV ingestion from rule evaluation — so new capabilities slot in without touching core architecture.",
-
-    "When I'm not writing Python, I'm studying the intersection of embedded systems and AI — " +
-    "exploring how GenAI toolchains can be wired into IoT and edge control layers.",
-  ],
-
-  quote:
-    "Modular design is not a preference — it's the contract between today's code and tomorrow's requirements.",
-
-  pillars: [
-    {
-      title: "Modular by design",
-      body:  "Clean separation between input parsing, processing logic, and execution layers — always.",
-    },
-    {
-      title: "EEE × AI hybrid",
-      body:  "Power-systems knowledge applied directly to fault detection logic and sensor data pipelines.",
-    },
-    {
-      title: "Voice-first automation",
-      body:  "Offline, zero-latency speech architectures with zero cloud API dependency.",
-    },
-    {
-      title: "Applied GenAI",
-      body:  "Four certified AI programs — Google Gemini, n8n, prompt engineering, GenAI toolchains.",
-    },
-  ],
-};
-export const SITE = site;
