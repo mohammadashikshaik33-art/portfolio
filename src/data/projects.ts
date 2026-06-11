@@ -70,3 +70,4 @@ export const projectsMeta = {
   count:    "Two systems, one philosophy.",
   subcount: "Architecture case studies — built for correctness, modularity, and real-world relevance.",
 };
+export const PROJECTS = projects;

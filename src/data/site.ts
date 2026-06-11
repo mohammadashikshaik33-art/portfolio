@@ -89,3 +89,4 @@ export const about = {
     },
   ],
 };
+export const SITE = site;

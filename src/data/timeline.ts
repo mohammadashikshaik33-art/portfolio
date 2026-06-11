@@ -109,3 +109,4 @@ export const timeline: TimelineEntry[] = [
     tags:  ["Open to Work", "AI", "EEE"],
   },
 ];
+export const TIMELINE = timeline;
