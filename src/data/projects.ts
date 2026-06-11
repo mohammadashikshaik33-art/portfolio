@@ -1,78 +1,72 @@
-export type Badge = { label: string; tone: "green" | "gold" | "cyan" | "purple" };
+// ─────────────────────────────────────────────
+//  src/data/projects.ts  ·  Project case studies
+// ─────────────────────────────────────────────
+//
+//  Only projects documented in the resume are listed.
+//  NEXUS, SENTINEL, ATLAS, Smart Energy Monitoring have been
+//  removed as they are not yet shipped / documented.
+//
 
-export type Project = {
-  id: string;
-  title: string;
-  badges: Badge[];
-  sub: string;
-  tags: string[];
-  github?: string;
-  href?: string;
-};
+export interface Project {
+  id:          string;         // "#01" etc.
+  tags:        string[];       // badge chips at the top
+  title:       string;
+  description: string;
+  stack:       string[];       // tech chips
+  link:        string;         // GitHub or "#"
+  status?:     "active" | "completed";
+}
 
-export const PROJECTS: Project[] = [
+export const projects: Project[] = [
   {
-    id: "jarvis",
-    title: "JARVIS — Multi-Agent Orchestration System",
-    badges: [
-      { label: "Flagship", tone: "green" },
-      { label: "Concurrency", tone: "cyan" },
-      { label: "Orchestration", tone: "purple" },
+    id:    "#01",
+    tags:  ["Flagship", "Voice Automation", "Offline AI"],
+    title: "Jarvis — Python Voice-Controlled AI Automation",
+    description:
+      "Modular voice automation assistant integrating real-time speech-to-text with offline " +
+      "TTS synthesis — enabling zero-latency voice interaction with zero cloud API dependency. " +
+      "A fully decoupled command-processing pipeline lets new command modules be added without " +
+      "restructuring core architecture. Handles OS-level automation, app launching, file ops, " +
+      "voice-triggered web navigation, and context-aware time/date responses.",
+    stack:  [
+      "Python",
+      "speech_recognition",
+      "pyttsx3",
+      "os / subprocess",
+      "webbrowser",
+      "datetime",
     ],
-    sub: "Production-grade 5-layer orchestration for autonomous desktop assistance. Deterministic execution pipelines, thread-safe memory, scalable plugin routing.",
-    tags: ["Python", "ThreadPoolExecutor", "RLock", "Plugin Architecture", "Ollama", "pyautogui"],
-    github: "https://github.com/shaik-mohammad-ashik",
+    link:   "https://github.com/mohammadashikshaik33-art/Jarvis_AI",
+    status: "active",
   },
+
   {
-    id: "energy",
-    title: "Smart Energy Monitoring & Telemetry",
-    badges: [
-      { label: "Hardware+Software", tone: "gold" },
-      { label: "Real-time", tone: "cyan" },
+    id:    "#02",
+    tags:  ["EEE + AI", "Rule Engine", "Fault Detection"],
+    title: "Electrical Sensor Data Rule Engine",
+    description:
+      "Rule-based fault detection system simulating real-world electrical monitoring. " +
+      "Processes multi-parameter sensor readings (voltage, current, temperature) from " +
+      "structured CSV data streams. Configurable threshold analysis maps sensor states to " +
+      "fault classifications: HIGH_VOLTAGE_FAULT, LOW_VOLTAGE_FAULT, and NORMAL — " +
+      "mirroring industry-standard electrical fault categorisation. Full pipeline: " +
+      "CSV ingestion → parameter validation → rule evaluation → classified output " +
+      "with structured terminal logs and optional fault-event report generation.",
+    stack:  [
+      "Python",
+      "pandas",
+      "CSV processing",
+      "Rule-based logic",
+      "Threshold analysis",
     ],
-    sub: "Zero-dependency client-side telemetry engine for real-time electrical parameter visualization. Sub-10ms render cycles, 100Hz sampling.",
-    tags: ["JavaScript", "Canvas API", "Async Generators", "CSS Grid", "Zero Deps"],
-    github: "https://github.com/shaik-mohammad-ashik",
-  },
-  {
-    id: "signal",
-    title: "Embedded Telemetry & Signal Logger",
-    badges: [
-      { label: "Signal Processing", tone: "green" },
-      { label: "Anomaly Detection", tone: "gold" },
-    ],
-    sub: "Modular signal processing framework for parsing, validating, logging hardware sensor transmissions. O(1) anomaly detection with robust error handling.",
-    tags: ["Python", "OOP", "Dict Indexing", "Signal Processing", "Error Handling"],
-    github: "https://github.com/shaik-mohammad-ashik",
-  },
-  {
-    id: "nexus",
-    title: "NEXUS — Distributed Agent Mesh",
-    badges: [
-      { label: "Research", tone: "purple" },
-      { label: "Multi-agent", tone: "green" },
-    ],
-    sub: "Experimental framework for agent-to-agent coordination across processes. Message bus + capability negotiation + shared decision engine.",
-    tags: ["Python", "asyncio", "ZeroMQ", "LangChain", "Pub/Sub"],
-  },
-  {
-    id: "sentinel",
-    title: "SENTINEL — Grid Anomaly Detector",
-    badges: [
-      { label: "ML", tone: "cyan" },
-      { label: "Embedded AI", tone: "gold" },
-    ],
-    sub: "Edge-deployed model for detecting power-grid anomalies from time-series telemetry. Lightweight CNN, runs on Raspberry Pi class hardware.",
-    tags: ["Python", "PyTorch", "InfluxDB", "MQTT", "Edge AI"],
-  },
-  {
-    id: "atlas",
-    title: "ATLAS — Vision-Guided Automation",
-    badges: [
-      { label: "Computer Vision", tone: "green" },
-      { label: "Robotics", tone: "purple" },
-    ],
-    sub: "Vision pipeline coupling YOLO detection with a pyautogui executor — natural-language commands translated to screen-aware actions.",
-    tags: ["Python", "YOLOv8", "OpenCV", "pyautogui", "LLM"],
+    link:   "https://github.com/mohammadashikshaik33-art",
+    status: "completed",
   },
 ];
+
+// ── Section header ─────────────────────────────
+export const projectsMeta = {
+  // Update this line if you want the section subheading to read differently
+  count:    "Two systems, one philosophy.",
+  subcount: "Architecture case studies — built for correctness, modularity, and real-world relevance.",
+};

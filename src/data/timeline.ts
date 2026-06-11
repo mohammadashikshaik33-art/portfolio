@@ -1,59 +1,111 @@
-export type TimelineItem = {
-  time: string;
-  title: string;
-  org: string;
-  desc: string;
-  tags: string[];
-};
+// ─────────────────────────────────────────────
+//  src/data/timeline.ts  ·  Experience timeline
+// ─────────────────────────────────────────────
+//
+//  Changes from previous version:
+//   - Removed "CCBP 4.0 Genius Certification" (not in resume)
+//   - Added the four GenAI certifications from resume
+//   - Corrected JARVIS description to match resume (voice-first,
+//     no ThreadPoolExecutor / RLock — those details aren't documented)
+//   - Removed "NEXUS + portfolio" entry (NEXUS is not a real project yet)
+//
 
-export const TIMELINE: TimelineItem[] = [
+export interface TimelineEntry {
+  date:  string;
+  title: string;
+  org:   string;
+  body:  string;
+  tags:  string[];
+}
+
+export const timeline: TimelineEntry[] = [
   {
-    time: "2023 · Aug",
+    date:  "2023 · Aug",
     title: "Started B.Tech in EEE",
-    org: "VVIT, Andhra Pradesh",
-    desc: "Began Electrical & Electronics Engineering with focus on power electronics, control systems, and embedded.",
-    tags: ["EEE", "Foundations"],
+    org:   "VVIT, Andhra Pradesh",
+    body:
+      "Began Electrical & Electronics Engineering with focus on power electronics, " +
+      "control systems, and embedded system fundamentals.",
+    tags:  ["EEE", "Foundations"],
   },
+
   {
-    time: "2023 · Apr → 2025 · Apr",
-    title: "CCBP 4.0 — Genius Certification",
-    org: "NxtWave Academy",
-    desc: "Two-year intensive: functional programming, client architecture, full-stack development. Top performer track.",
-    tags: ["JavaScript", "React", "Systems"],
+    date:  "2024 · Q2",
+    title: "Generative AI BootCamp — Grade A",
+    org:   "NSDC / Skill India",
+    body:
+      "Certified with Grade A. Covered LLM fundamentals, prompt engineering, and " +
+      "applied Generative AI system design.",
+    tags:  ["GenAI", "Certified"],
   },
+
   {
-    time: "2024 · Q2",
-    title: "First production Python tool",
-    org: "Independent",
-    desc: "Shipped Embedded Telemetry Signal Logger — parser + anomaly classifier for sensor streams.",
-    tags: ["Python", "OOP"],
+    date:  "2024 · Q2",
+    title: "3-Day Generative AI BootCamp",
+    org:   "Growth School",
+    body:
+      "Practical GenAI tools for productivity, engineering automation, and workflow design.",
+    tags:  ["GenAI", "Automation"],
   },
+
   {
-    time: "2024 · Q4",
-    title: "JARVIS v1 — first orchestrator",
-    org: "Independent research",
-    desc: "Single-layer assistant evolved into multi-layer architecture after concurrency bugs forced a redesign.",
-    tags: ["Threading", "Plugin Arch"],
+    date:  "2024 · Q2",
+    title: "Generative AI Intensive Program",
+    org:   "Outskill",
+    body:
+      "Hands-on with Google Gemini, n8n automation workflows, AI video creation pipelines, " +
+      "and end-to-end portfolio delivery.",
+    tags:  ["Gemini", "n8n", "Pipelines"],
   },
+
   {
-    time: "2025 · Q1",
-    title: "JARVIS v2 — 5-layer pipeline",
-    org: "Flagship project",
-    desc: "Planner → Reviewer → Executor → Dispatcher → Controller. Singleton GLOBAL_MEMORY with RLock sync.",
-    tags: ["Concurrency", "Architecture"],
+    date:  "2024 · Q2",
+    title: "Electrical Sensor Fault Detection Engine",
+    org:   "Independent",
+    body:
+      "Shipped rule-based fault detection system — CSV ingestion → threshold analysis → " +
+      "fault classification (HIGH_VOLTAGE_FAULT / LOW_VOLTAGE_FAULT / NORMAL). " +
+      "First production Python tool targeting real-world electrical monitoring.",
+    tags:  ["Python", "EEE + AI"],
   },
+
   {
-    time: "2025 · Q3",
-    title: "J.P. Morgan Forage program",
-    org: "Investment Banking Sim",
-    desc: "Financial modeling mechanics and corporate data analysis workflows.",
-    tags: ["Finance", "Modeling"],
+    date:  "2024 · Q4",
+    title: "Jarvis v1 — Voice Automation Assistant",
+    org:   "Independent",
+    body:
+      "Built first version of Jarvis: offline voice-to-text + TTS synthesis + OS-level " +
+      "command execution. Decoupled input parsing from execution logic from day one.",
+    tags:  ["Voice AI", "Python"],
   },
+
   {
-    time: "2026 · Now",
-    title: "Building NEXUS + portfolio",
-    org: "Open for opportunities",
-    desc: "Distributed agent mesh research + crafting this very portfolio. Open to AI infrastructure roles.",
-    tags: ["Distributed", "Agents", "AI"],
+    date:  "2025 · Q1",
+    title: "Jarvis v2 — Expanded Automation Layer",
+    org:   "Flagship project",
+    body:
+      "Extended command modules — voice-triggered web navigation, datetime-aware responses, " +
+      "and subprocess-level application control. Architecture remains modular: zero rewrites " +
+      "to core pipeline when adding new capabilities.",
+    tags:  ["Modular", "Automation"],
+  },
+
+  {
+    date:  "2025 · Oct",
+    title: "J.P. Morgan Investment Banking Simulation",
+    org:   "Forage",
+    body:
+      "Financial analysis, deal structuring workflows, and investment banking process simulation.",
+    tags:  ["Finance", "Simulation"],
+  },
+
+  {
+    date:  "2026 · Now",
+    title: "Final year — open for opportunities",
+    org:   "VVIT + Independent",
+    body:
+      "Completing B.Tech EEE, expanding GenAI toolchain integrations, and actively targeting " +
+      "hybrid AI × embedded roles. Open to internships, remote projects, and full-time positions.",
+    tags:  ["Open to Work", "AI", "EEE"],
   },
 ];

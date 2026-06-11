@@ -1,59 +1,97 @@
-export type Skill = {
-  title: string;
-  color: string;
-  level: string;
-  pct: number;
-  items: string[];
-  icon: "frontend" | "backend" | "ai" | "devops" | "tools" | "embedded";
-};
+// ─────────────────────────────────────────────
+//  src/data/skills.ts  ·  Skill categories
+// ─────────────────────────────────────────────
+//
+//  Six domains — mirrors the current 6-column layout.
+//  Only skills actually used/certified in the resume are listed.
+//
 
-export const SKILLS: Skill[] = [
+export interface SkillCategory {
+  name:        string;
+  skills:      string[];
+  proficiency: { label: string; value: number };
+}
+
+export const skills: SkillCategory[] = [
   {
-    title: "Frontend",
-    color: "var(--green)",
-    level: "Advanced",
-    pct: 88,
-    items: ["React", "Next.js 14", "TypeScript", "Tailwind", "Framer Motion", "GSAP", "HTML/CSS3", "Canvas"],
-    icon: "frontend",
+    name: "Python Ecosystem",
+    skills: [
+      "Python",
+      "pandas",
+      "csv / io",
+      "os",
+      "subprocess",
+      "datetime",
+      "pathlib",
+      "SQL",
+    ],
+    proficiency: { label: "Primary language · 80%", value: 80 },
   },
+
   {
-    title: "Backend",
-    color: "var(--cyan)",
-    level: "Proficient",
-    pct: 78,
-    items: ["Node.js", "Express", "Python", "FastAPI", "REST", "WebSockets", "JSON", "OAuth"],
-    icon: "backend",
+    name: "Voice & Speech",
+    skills: [
+      "speech_recognition",
+      "pyttsx3",
+      "webbrowser",
+      "offline TTS",
+      "real-time STT",
+      "command parsing",
+      "NLP pipelines",
+    ],
+    proficiency: { label: "Specialist · 75%", value: 75 },
   },
+
   {
-    title: "AI / ML",
-    color: "var(--gold)",
-    level: "Specialized",
-    pct: 92,
-    items: ["Ollama", "LangChain", "OpenAI API", "Prompt Engineering", "RAG", "Agent Orchestration", "Vector DBs", "LlamaIndex"],
-    icon: "ai",
+    name: "AI & Generative AI",
+    skills: [
+      "Google Gemini",
+      "n8n automation",
+      "Prompt Engineering",
+      "AI-assisted content generation",
+      "basic workflow automation using n8n",
+      "LLM fundamentals",
+      "workflow design",
+    ],
+    proficiency: { label: "Certified · 72%", value: 72 },
   },
+
   {
-    title: "DevOps",
-    color: "#A78BFA",
-    level: "Working",
-    pct: 70,
-    items: ["Git", "GitHub Actions", "Docker", "Linux", "Vercel", "Bash", "CI/CD", "Nginx"],
-    icon: "devops",
+    name: "Developer Tools",
+    skills: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Canva",
+      "Vercel",
+      "Markdown",
+    ],
+    proficiency: { label: "Daily driver · 78%", value: 78 },
   },
+
   {
-    title: "Tools",
-    color: "var(--green)",
-    level: "Daily driver",
-    pct: 84,
-    items: ["VS Code", "Figma", "Postman", "Notion", "Vite", "pnpm", "Cursor", "Arc"],
-    icon: "tools",
+    name: "Electrical Systems",
+    skills: [
+      "Voltage / current analysis",
+      "Fault classification",
+      "Power system monitoring",
+      "industrial monitoring concepts",
+      "Electrical safety",
+      "Sensor threshold analysis",
+    ],
+    proficiency: { label: "Domain core · 74%", value: 74 },
   },
+
   {
-    title: "Embedded",
-    color: "var(--cyan)",
-    level: "Hardware-informed",
-    pct: 75,
-    items: ["C", "Microcontrollers", "ADC/DAC", "UART/SPI", "pyserial", "Signal Processing", "Telemetry", "PCB basics"],
-    icon: "embedded",
+    name: "IoT & Embedded",
+    skills: [
+      "Sensor data interfacing",
+      "Real-time monitoring",
+      "IoT data flow",
+      "embedded-style system design",
+      "Rule-based classification",
+      "Modular system architecture",
+    ],
+    proficiency: { label: "Hardware-informed · 68%", value: 68 },
   },
 ];
