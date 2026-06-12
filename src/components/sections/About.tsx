@@ -4,10 +4,30 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import Reveal from "@/components/ui/Reveal";
 
 const CARDS = [
-  { ico: <FiGrid />, color: "var(--green)", title: "Architecture-first", body: "Design for scalability before implementation. Always." },
-  { ico: <FiRefreshCw />, color: "var(--gold)", title: "Concurrency native", body: "Thread-safety engineered in from day one." },
-  { ico: <FiCpu />, color: "var(--cyan)", title: "Hardware-informed", body: "EE rigor applied to software constraints." },
-  { ico: <FiSettings />, color: "#A78BFA", title: "Systems over features", body: "Plugin boundaries that evolve into multi-agent worlds." },
+  {
+    ico: <FiGrid />,
+    color: "var(--green)",
+    title: "Modular by design",
+    body: "Clean separation between input parsing, processing logic, and execution layers — always.",
+  },
+  {
+    ico: <FiRefreshCw />,
+    color: "var(--gold)",
+    title: "EEE × AI hybrid",
+    body: "Power-systems knowledge applied directly to fault detection logic and sensor data pipelines.",
+  },
+  {
+    ico: <FiCpu />,
+    color: "var(--cyan)",
+    title: "Voice-first automation",
+    body: "Offline, zero-latency speech architectures with zero cloud API dependency.",
+  },
+  {
+    ico: <FiSettings />,
+    color: "#A78BFA",
+    title: "Applied GenAI",
+    body: "Four certified AI programs — Google Gemini, n8n, prompt engineering, GenAI toolchains.",
+  },
 ];
 
 export default function About() {
@@ -19,33 +39,35 @@ export default function About() {
           <>
             <span className="grad-text">Systems architecture</span>
             <br />
-            meets cinematic interfaces.
+            meets applied AI.
           </>
         }
-        sub="I'm an Electrical & Electronics Engineering undergraduate at VVIT specializing in orchestration architectures for autonomous AI systems — and the immersive interfaces that bring them to life."
+        sub="I'm a final-year Electrical & Electronics Engineering student at VVIT with a practical foundation in Python-based AI system design, voice automation architecture, and sensor-driven electrical fault detection."
       />
 
       <div className="grid md:grid-cols-[1fr_1.2fr] gap-12 items-start">
         <Reveal>
           <div className="text-[15.5px] leading-[1.8] text-[var(--text-2)] space-y-4">
             <p>
-              My work centers on designing <strong className="text-white">multi-layer execution pipelines</strong>, concurrent system
-              patterns, and intelligent automation frameworks — combining hardware engineering rigor with AI systems thinking.
+              My work centres on building real-world, modular systems — integrating{" "}
+              <strong className="text-white">speech recognition pipelines</strong>, rule-based data
+              processing engines, and Generative AI toolchains into production-ready Python architecture.
             </p>
             <p>
-              I think in execution flow first. Every system starts with{" "}
-              <strong className="text-white">layer isolation, failure modes, and concurrency contracts</strong> before a single line of
-              business logic.
+              I think in layers. Every system I build decouples{" "}
+              <strong className="text-white">voice input parsing from execution logic</strong>, and CSV
+              ingestion from rule evaluation — so new capabilities slot in without touching core architecture.
             </p>
             <p>
-              When I'm not engineering systems, I'm crafting <strong className="text-white">premium product UI</strong> — the same
-              precision applied to motion, type, and color.
+              When I&apos;m not writing Python, I&apos;m exploring how{" "}
+              <strong className="text-white">GenAI toolchains can be wired into IoT and edge control layers</strong>{" "}
+              — the personal research direction that sits at the intersection of my EEE degree and AI work.
             </p>
             <blockquote
               className="mt-6 py-4 px-5 italic text-white text-[15px] rounded-r-xl"
               style={{ borderLeft: "2px solid var(--green)", background: "rgba(45,232,138,.04)" }}
             >
-              "Race conditions and shared-state corruption are architectural problems, not debugging problems."
+              &ldquo;Modular design is not a preference — it&apos;s the contract between today&apos;s code and tomorrow&apos;s requirements.&rdquo;
             </blockquote>
           </div>
         </Reveal>

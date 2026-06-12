@@ -8,10 +8,10 @@ import { SITE } from "@/data/site";
 const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(SITE.email)}&su=${encodeURIComponent("Hello Ashik — let's connect")}`;
 
 const channels = [
-  { href: gmailCompose, label: SITE.email, icon: <FiMail />, ext: true },
-  { href: `tel:${SITE.phone}`, label: "+91 63046 46550", icon: <FiPhone /> },
-  { href: SITE.github, label: "github.com/shaik-mohammad-ashik", icon: <FaGithub />, ext: true },
-  { href: SITE.linkedin, label: "linkedin.com/in/shaik-mohammad-ashik", icon: <FaLinkedin />, ext: true },
+  { href: gmailCompose,             label: SITE.email,                          icon: <FiMail />,    ext: true  },
+  { href: `tel:${SITE.phone}`,      label: "+91 63046 46550",                   icon: <FiPhone />               },
+  { href: SITE.github,              label: "github.com/mohammadashikshaik33-art", icon: <FaGithub />, ext: true  },
+  { href: SITE.linkedin,            label: "linkedin.com/in/shaik-mohammad-ashik", icon: <FaLinkedin />, ext: true },
 ];
 
 export default function Contact() {
@@ -45,8 +45,8 @@ export default function Contact() {
               Let&apos;s <span className="grad-text">build something</span> intelligent.
             </h2>
             <p className="text-[var(--text-2)] max-w-[520px] mx-auto text-[15px] mb-7">
-              Open to AI infrastructure roles, autonomous systems projects, robotics &amp; embedded AI, and collaboration on
-              orchestration architecture.
+              Open to Python development roles, AI automation engineering projects, EEE × AI hybrid
+              opportunities, and collaboration on voice automation or GenAI toolchains.
             </p>
 
             <div className="flex flex-wrap justify-center gap-3 mb-8">

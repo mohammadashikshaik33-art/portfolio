@@ -1,21 +1,26 @@
-// ─────────────────────────────────────────────
-//  src/data/skills.ts  ·  Skill categories
-// ─────────────────────────────────────────────
-//
-//  Six domains — mirrors the current 6-column layout.
-//  Only skills actually used/certified in the resume are listed.
-//
+// ─────────────────────────────────────────────────────────────────────────────
+//  src/data/skills.ts
+//  Interface MUST match Skills.tsx SkillCard usage:
+//    skill.title  skill.icon  skill.color  skill.items  skill.pct  skill.level
+//  icon values MUST be keys of the ICONS record in Skills.tsx:
+//    "frontend" | "backend" | "ai" | "devops" | "tools" | "embedded"
+// ─────────────────────────────────────────────────────────────────────────────
 
-export interface SkillCategory {
-  name:        string;
-  skills:      string[];
-  proficiency: { label: string; value: number };
+export interface Skill {
+  title: string;
+  icon:  "frontend" | "backend" | "ai" | "devops" | "tools" | "embedded";
+  color: string;
+  items: string[];
+  level: string;
+  pct:   number;
 }
 
-export const skills: SkillCategory[] = [
+export const SKILLS: Skill[] = [
   {
-    name: "Python Ecosystem",
-    skills: [
+    title: "Python Ecosystem",
+    icon:  "backend",
+    color: "var(--green)",
+    items: [
       "Python",
       "pandas",
       "csv / io",
@@ -25,12 +30,15 @@ export const skills: SkillCategory[] = [
       "pathlib",
       "SQL",
     ],
-    proficiency: { label: "Primary language · 80%", value: 80 },
+    level: "Primary language",
+    pct:   80,
   },
 
   {
-    name: "Voice & Speech",
-    skills: [
+    title: "Voice & Speech",
+    icon:  "frontend",
+    color: "var(--cyan)",
+    items: [
       "speech_recognition",
       "pyttsx3",
       "webbrowser",
@@ -39,12 +47,15 @@ export const skills: SkillCategory[] = [
       "command parsing",
       "NLP pipelines",
     ],
-    proficiency: { label: "Specialist · 75%", value: 75 },
+    level: "Specialist",
+    pct:   75,
   },
 
   {
-    name: "AI & Generative AI",
-    skills: [
+    title: "AI & Generative AI",
+    icon:  "ai",
+    color: "var(--gold)",
+    items: [
       "Google Gemini",
       "n8n automation",
       "Prompt Engineering",
@@ -53,12 +64,15 @@ export const skills: SkillCategory[] = [
       "AI video creation",
       "workflow design",
     ],
-    proficiency: { label: "Certified · 72%", value: 72 },
+    level: "Certified",
+    pct:   72,
   },
 
   {
-    name: "Developer Tools",
-    skills: [
+    title: "Developer Tools",
+    icon:  "tools",
+    color: "#A78BFA",
+    items: [
       "Git",
       "GitHub",
       "VS Code",
@@ -66,12 +80,15 @@ export const skills: SkillCategory[] = [
       "Vercel",
       "Markdown",
     ],
-    proficiency: { label: "Daily driver · 78%", value: 78 },
+    level: "Daily driver",
+    pct:   78,
   },
 
   {
-    name: "Electrical Systems",
-    skills: [
+    title: "Electrical Systems",
+    icon:  "embedded",
+    color: "var(--green)",
+    items: [
       "Voltage / current analysis",
       "Fault classification",
       "Power system monitoring",
@@ -79,20 +96,23 @@ export const skills: SkillCategory[] = [
       "Electrical safety",
       "Sensor threshold analysis",
     ],
-    proficiency: { label: "Domain core · 74%", value: 74 },
+    level: "Domain core",
+    pct:   74,
   },
 
   {
-    name: "IoT & Embedded",
-    skills: [
+    title: "IoT & Embedded",
+    icon:  "devops",
+    color: "var(--cyan)",
+    items: [
       "Sensor data interfacing",
       "Real-time monitoring",
       "IoT data flow",
-      "Embedded system fundamentals",
+      "Embedded fundamentals",
       "Rule-based classification",
-      "Modular system architecture",
+      "Modular architecture",
     ],
-    proficiency: { label: "Hardware-informed · 68%", value: 68 },
+    level: "Hardware-informed",
+    pct:   68,
   },
 ];
-export const SKILLS = skills;

@@ -9,8 +9,8 @@ import { cn } from "@/lib/cn";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState("home");
-  const [open, setOpen] = useState(false);
+  const [active, setActive]     = useState("home");
+  const [open, setOpen]         = useState(false);
 
   useEffect(() => {
     const sections = SITE.nav.map((n) => document.getElementById(n.id));
@@ -75,9 +75,12 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-          <IconLink href={SITE.github} label="GitHub"><FiGithub /></IconLink>
+          <IconLink href={SITE.github}   label="GitHub"><FiGithub /></IconLink>
           <IconLink href={SITE.linkedin} label="LinkedIn"><FiLinkedin /></IconLink>
-          <IconLink href={SITE.twitter} label="X / Twitter"><FaXTwitter /></IconLink>
+          {/* Twitter icon hidden when no URL provided */}
+          {SITE.twitter && (
+            <IconLink href={SITE.twitter} label="X / Twitter"><FaXTwitter /></IconLink>
+          )}
           <Link
             href={SITE.resume}
             target="_blank"

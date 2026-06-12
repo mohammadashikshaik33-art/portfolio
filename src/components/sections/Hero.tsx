@@ -18,7 +18,7 @@ export default function Hero() {
             className="eyebrow mb-6"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-green animate-pulse" />
-            AI Engineer · Full-Stack Developer · EEE @ VVIT
+            Python Developer · AI Automation · EEE @ VVIT
           </motion.span>
 
           <motion.h1
@@ -32,9 +32,9 @@ export default function Hero() {
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: "linear-gradient(135deg,var(--green) 0%,var(--cyan) 60%,var(--gold) 100%)" }}
             >
-              Intelligent Digital
+              Intelligent
             </span>{" "}
-            Experiences
+            Automation Systems
           </motion.h1>
 
           <motion.div
@@ -59,7 +59,8 @@ export default function Hero() {
             transition={{ delay: 0.3, duration: 0.7 }}
             className="text-[var(--text-2)] text-[16.5px] max-w-[560px] leading-relaxed mb-9"
           >
-            {SITE.subtagline} I architect orchestration systems, design autonomous agents, and build interfaces that feel alive.
+            {SITE.subtagline} I design voice automation pipelines, sensor-driven fault detection engines,
+            and applied GenAI toolchains — bridging EEE fundamentals with intelligent software.
           </motion.p>
 
           <motion.div
@@ -83,14 +84,13 @@ export default function Hero() {
             className="flex gap-9"
           >
             {[
-              ["15", "Projects shipped"],
-              ["3", "Years coding"],
-              ["8", "AI systems built"],
+              ["2+", "Systems shipped"],
+              ["4",  "AI certifications"],
+              ["3+", "Years building"],
             ].map(([v, l]) => (
               <div key={l} className="flex flex-col gap-1">
                 <span className="font-heading font-bold text-2xl text-green flex items-baseline gap-0.5">
                   {v}
-                  <span className="text-gold text-lg">+</span>
                 </span>
                 <span className="font-mono text-[11px] text-[var(--muted)] uppercase tracking-wider">{l}</span>
               </div>
@@ -143,7 +143,7 @@ export default function Hero() {
             Available for work
           </FloatingBadge>
           <FloatingBadge style={{ bottom: "8%", right: "-6%" }} icon={<FiStar size={10} />} tone="gold">
-            Top 5% CCBP
+            NSDC Grade A
           </FloatingBadge>
           <FloatingBadge style={{ top: "60%", left: "-10%" }} icon={<FiGitBranch size={10} />} tone="cyan">
             Open source
