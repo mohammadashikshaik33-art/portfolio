@@ -13,27 +13,66 @@ export default function ParticlesBg() {
   }, []);
 
   const options = useMemo(
-    () =>
-      ({
-        fullScreen: { enable: false },
-        background: { color: "transparent" },
-        fpsLimit: 60,
-        particles: {
-          number: { value: reduced ? 0 : 60, density: { enable: true, area: 900 } },
-          color: { value: ["#2DE88A", "#5BE7FF", "#E8B547"] },
-          opacity: { value: { min: 0.2, max: 0.7 } },
-          size: { value: { min: 0.6, max: 2.2 } },
-          move: { enable: true, speed: 0.4, outModes: { default: "bounce" } },
-          links: { enable: true, distance: 130, color: "#5BE7FF", opacity: 0.2, width: 0.6 },
+  () => ({
+    fullScreen: { enable: false },
+    background: { color: "transparent" },
+    fpsLimit: 60,
+
+    particles: {
+      number: {
+        value: reduced ? 0 : 90,
+        density: { enable: true, area: 800 },
+      },
+
+      color: {
+        value: ["#00ff9d", "#00d4ff", "#a855f7"],
+      },
+
+      opacity: {
+        value: 0.8,
+      },
+
+      size: {
+        value: { min: 1, max: 2.8 },
+      },
+
+      move: {
+        enable: true,
+        speed: 0.7,
+        outModes: { default: "bounce" },
+      },
+
+      links: {
+        enable: true,
+        distance: 140,
+        color: "#00ff9d",
+        opacity: 0.6,
+        width: 1.2,
+      },
+
+      shadow: {
+        enable: true,
+        color: "#00ff9d",
+        blur: 5,
+      },
+    },
+
+    interactivity: {
+      events: {
+        onHover: { enable: true, mode: "grab" },
+      },
+      modes: {
+        grab: {
+          distance: 160,
+          links: { opacity: 0.8 },
         },
-        interactivity: {
-          events: { onHover: { enable: true, mode: "repulse" } },
-          modes: { repulse: { distance: 80, duration: 0.4 } },
-        },
-        detectRetina: true,
-      }) as const,
-    [reduced]
-  );
+      },
+    },
+
+    detectRetina: true,
+  }) as const,
+  [reduced]
+);
 
   if (!ready) return null;
   return (
